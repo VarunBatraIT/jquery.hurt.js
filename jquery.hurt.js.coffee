@@ -30,9 +30,9 @@ $ ->
       $.each(settings.swearWords, (index, word) ->
         if($this.val().toLowerCase().indexOf(word.toLowerCase()) >= 0)
           displayError($this)
-          return false
+          false
         else
           removeError($this)
-          return true
+          true
       )
     )
