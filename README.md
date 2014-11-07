@@ -15,14 +15,16 @@ Plugin has inbuilt very small list (you can add more) of swear words/sentences s
 Using plugin is pretty much forward:
 
 ```javascript
-$("input, textarea").hurt({
-        swearWords: ['fuck off', 'kill yourself', 'mother fucker', 'hate you', 'go to hell', 'leave me alone', 'you are dead'],
-        errorMessage: 'Kind of language you are using can actually <b>HURT</b> someone. Please reconsider.',
-        classOnElement: 'hurt',
-        onEvent: 'focusout',
-        errorTemplate: '<div class="text-warning">errorMessage</div>'
-      }
-})
+$('textarea, input').hurt(
+{
+      swearWords: ['fuck off', 'kill yourself', 'mother fucker', 'hate you', 'go to hell', 'leave me alone',
+                   'you are dead'], #array of words/sentences if found, plugin will warn
+      errorMessage: 'Kind of language you are using can actually <b>HURT</b> someone. Please reconsider.' #message to show
+      classOnElement: 'hurt' #class will be added to input text or textarea where user is typing
+      onEvent: 'focusout' #or keyup, keydown
+      errorTemplate: '<div class="text-warning">errorMessage</div>'
+    }
+);
 
 ```
 
